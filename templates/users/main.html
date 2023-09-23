@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        {% if user.is_authenticated %}
+                <p>Вы уже авторизованы. Перейти в <a href="{% url 'profile' %}">личный кабинет</a>?
+                {% endif %}
+            {% if not user.is_authenticated %}
+                        <h1>Ебитесь вы в рот</h1>
+        <p>Сосите хуй и обсасывайте мои яйца прямо сейчас.</p>
+        <div>
+            <a href="{% url 'register' %}" class="btn btn-primary">Зарегистрироваться</a>
+        </div>
+        <p>Уже имеете аккаунт?</p>
+        <div>
+            <a href="{% url 'login' %}" class="btn btn-secondary">Войти</a>
+        </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

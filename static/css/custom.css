@@ -1,0 +1,42 @@
+.container {
+    background-color: #ffffff;
+}
+.my-container .my-element {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+.my-form {
+    margin-bottom: 20px;
+}
+
+
+.my-form .form-control {
+    margin-bottom: 10px;
+}
+
+
+.my-form .btn {
+    margin-top: 10px;
+}
+.my-custom-element {
+    opacity: 0;
+    margin-bottom: 20px;
+}
+.text-center {
+    text-align: left;
+}
+.my-custom-element2 {
+    background-color: #e4eeed; /* Здесь задайте цвет фона, который вам нужен */
+}
+.my-custom-element1 {
+    background-color: #ffffff;
+
+}
+.my-element4 {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.my-element5 {
+    background-color: #f3f3f3;
+    padding-left: 200px !important;
+}
