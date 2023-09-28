@@ -13,18 +13,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+import datetime
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 SECRET_KEY = 'django-insecure-j=$6r68ci7%q(xzodl2!rxz3=hl4r(-f@3*=sv8!a54bc*8v^_'
-
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ['26.76.243.228', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,12 +32,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-'crispy_forms',
-'crispy_bootstrap4',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'rest_framework',
-'rest_framework_simplejwt',
-
+    'rest_framework_simplejwt',
 ]
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 REST_FRAMEWORK = {
@@ -48,12 +46,10 @@ REST_FRAMEWORK = {
     ),
 }
 
-
-import datetime
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),  # Время жизни токена (по желанию)
-    'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),  # Время жизни для обновления токена (по желанию)
-    'SLIDING_TOKEN_LIFETIME': datetime.timedelta(days=30),  # Время жизни для скользящего токена (по желанию)
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
+    'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
+    'SLIDING_TOKEN_LIFETIME': datetime.timedelta(days=30),
     'SLIDING_TOKEN_REFRESH_LIMIT': None,
     'ROTATE_REFRESH_TOKENS': False,
     'ALGORITHM': 'HS256',
@@ -68,18 +64,14 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
 }
 
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 ROOT_URLCONF = 'TeammeeWebSite.urls'
 
@@ -102,7 +94,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TeammeeWebSite.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -110,13 +101,12 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'endlessnightNIGGER228',
         'HOST': 'localhost',
-        'PORT': '3306',       # Порт MySQL
+        'PORT': '3306',
     }
 }
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'login'
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -133,21 +123,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LANGUAGE_CODE = 'ru-ru'
 
-
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
 USE_TZ = True
 
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-ALLOWED_HOSTS = ['26.76.243.228', '127.0.0.1']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
