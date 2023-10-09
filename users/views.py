@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -32,6 +34,27 @@ def register(request):
 
 def main(request):
     return render(request, 'main.html')
+
+
+def handle_payment(request):
+    tariff_id = request.GET.get('tariff_id')
+    user = request.user
+    user.profile.tarif_level = tariff_id
+    if int(tariff_id) in [1, 2, 3, 4]:
+        user.profile.tariff_exp = datetime.date.today() + datetime.timedelta(days=30)
+    elif int(tariff_id) in [5, 6, 7, 8]:
+        user.profile.tariff_exp = datetime.date.today() + datetime.timedelta(days=365)
+    user.save()
+
+    return render(request, 'payment_handle.html')
+
+
+def checkout(request):
+    tariff = request.GET.get('tariff')
+    tariff_id = request.GET.get('id')
+    payment_amount = request.GET.get('payment_amount')
+
+    return render(request, 'tariff_checkout.html', {'tariff': tariff, 'tariff_id': tariff_id, 'payment_amount': payment_amount})
 
 
 def tarifs(request):

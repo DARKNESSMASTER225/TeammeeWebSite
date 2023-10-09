@@ -12,7 +12,7 @@
 {% block content2 %}
     <div class="my-element4 form-control my-custom-element">
                                                 </div>
-    <!-- Переключаемый интерфейс для выбора месячной или годовой подписки -->
+    <!-- Переключаемый интерфейс для выбора месячной или (на год - 12 мес.) подписки -->
     <div class="my-element4 justify-content-start mt-3">
     <label class="mr-3">
         <input type="radio" name="subscription" value="monthly"> Ежемесячное выставление счетов ㅤㅤ
@@ -30,10 +30,11 @@
             <div class="col-md">
                 <div class="card">
                     <div class="card-body text-center">
-                        <p class="card-text text-center">Для небольшой команды.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">6$</span> / в месяц  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="card-text text-center">Тариф "Для небольшой команды".</p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">600 ₽</span> / в месяц  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Для небольшой команды (на 1 мес.)&tariff_id=1&payment_amount=600" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -51,9 +52,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Для компактной команды.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">12,5$</span> / в месяц  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">1300 ₽</span> / в месяц  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Для компактной команды (на 1 мес.)&tariff_id=2&payment_amount=1300" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -70,9 +72,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Для большой команды.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">17$</span> / в месяц  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">1800 ₽</span> / в месяц  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Для большой команды. (на 1 мес.)&tariff_id=3&payment_amount=1800" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -90,9 +93,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Dream team.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">25$</span> / в месяц  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">2500 ₽</span> / в месяц  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Dream team (на 1 мес.)&tariff_id=4&payment_amount=2500" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -116,9 +120,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Для небольшой команды.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">68$</span> / в год  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">6800 ₽</span> / в год  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Для небольшой команды (на год - 12 мес.)&tariff_id=5&payment_amount=6800" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -136,9 +141,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Для компактной команды.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">138$</span> / в год  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">13800 ₽</span> / в год  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Для компактной команды (на год - 12 мес.)&tariff_id=6&payment_amount=13800" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -155,9 +161,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Для большой команды.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">184$</span> / в год  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">18400 ₽</span> / в год  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Для большой команды (на год - 12 мес.)&tariff_id=7&payment_amount=18400" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">
@@ -175,9 +182,10 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="card-text text-center">Dream team.</p>
-                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">276$</span> / в год  </p>
-                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>
-                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>
+                        <p class="text-center" style="font-size: 20px;"><span style="font-size: 50px;">27600 ₽</span> / в год  </p>
+                        <a href="/tariff/checkout/?tariff=Тариф Dream team (на год - 12 мес.)&tariff_id=8&payment_amount=27600" class="btn btn-primary text-center"> Купить <span style="font-size: 16px;">  ➜ </span></a>
+{#                        <a href="#" class="btn btn-primary text-center">Попробовать бесплатно <span style="font-size: 16px;">  ➜ </span></a>#}
+{#                        <p class="text-center"class="mt-2"><a href="#">Или купить прямо сейчас </a></p>#}
 
                     </div>
                     <div class="card-body text-left">

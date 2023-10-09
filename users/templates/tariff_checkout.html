@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="intellectmoney-payform">
+    <script async type="text/javascript">
+      fetch('https://merch.intellectmoney.ru/payform/' +
+          '?EshopId=466244' +
+          '&ServiceNameAuthor=0' +
+          '&ServiceName={{ tariff }}' +
+          '&PaymentAmountIsReadonly=true' +
+          '&PaymentAmount={{ payment_amount }}' +
+          '&PaymentCurrency=%E2%82%BD&ButtonName=0' +
+          '&Preferences=' +
+          '&PayerData=' +
+          '&Comment=false' +
+          '&CommentTip=' +
+          '&UserEmail=true' +
+          '&UserFullName=' +
+          '&PhoneNumber=' +
+          '&SuccessUrl='
+                + window.location.origin +
+                '%2Fhandepayment' +
+                '%2F%3Ftariff_id%3D{{ tariff_id }}' +
+                '%26payment_amount%3D{{ payment_amount }}' +
+          '&OpenNewWindow=true' +
+          '&MerchantReceipt=%7B%22Content%22%3A%7B%22Type%22%3A1%2C%22Positions%22%3A%5B%5D%7D%7D')
+        .then(res => res.text())
+        .then((responseText) => {
+          const c = document.getElementById('intellectmoney-payform');
+          c.innerHTML = responseText;
+          Array.prototype.slice.call(new DOMParser().parseFromString(responseText, 'text/html').getElementsByTagName('script')).forEach(s => {
+            let e = document.createElement('script');
+            e.src = s.src;
+            e.type = s.type;
+            c.appendChild(e);
+          });
+        });
+    </script>
+    div>
+
+{% endblock %}
