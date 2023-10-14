@@ -3,27 +3,27 @@
 {% block content %}
     <div class="content-section">
     {% if user.is_authenticated %}
-                <p>Вы уже авторизованы. Перейти в <a href="{% url 'profile' %}">личный кабинет</a>?
+                <p>{% translate 'Вы уже авторизированны. Перейти' %} <a href="{% url 'profile' %}">{% translate 'в профиль' %}</a>?
                 {% endif %}
             {% if not user.is_authenticated %}
                 <div class="my-form">
                     <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Добро пожаловать</legend>
+                <legend class="border-bottom mb-4">{% translate 'Добро пожаловать' %}</legend>
                 {{ form|crispy }}
             </fieldset>
                         <div class="form-control my-custom-element">
                                                 </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Регистрация</button>
+                <button type="submit" class="btn btn-primary">{% translate 'Зарегистрироваться' %}</button>
             </div>
                         <div class="form-control my-custom-element">
                                                 </div>
                     </div>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Уже есть аккаунт? <a class="ml-2" href="{% url 'login' %}">Вход</a>
+                {% translate 'Уже есть аккаунт?' %} <a class="ml-2" href="{% url 'login' %}">{% translate 'Войти' %}</a>
             </small>
         </div>
         {% endif %}

@@ -12,21 +12,21 @@
        <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
-              <legend class="border-bottom mb-4">Ваш профиль</legend>
+              <legend class="border-bottom mb-4">{% translate 'Ваш профиль' %}</legend>
               {{ u_form|crispy }}
               {{ p_form|crispy }}
           </fieldset>
            <div class="form-control my-custom-element">
                                                 </div>
           <div class="form-group">
-              <button class="btn btn-primary" type="submit">Обновить</button>
+              <button class="btn btn-primary" type="submit">{% translate 'Обновить' %}</button>
           </div>
            <div class="form-control my-custom-element">
                                                 </div>
       </form>
     <div class="border-top pt-3">
             <small class="text-muted">
-                <a class="ml-2" href="{% url 'logout' %}">Выйти из аккаунта?</a>
+                <a class="ml-2" href="{% url 'logout' %}">{% translate 'Выйти' %}</a>
             </small>
         </div>
     </div>

@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-14 01:35+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\templates\base.html:36
+msgid "Главная"
+msgstr "Home"
+
+#: .\templates\base.html:39
+msgid "Профиль"
+msgstr "Profile"
+
+#: .\templates\login.html:6 .\templates\main.html:6 .\templates\register.html:6
+msgid "Вы уже авторизированны. Перейти"
+msgstr "You are already authorized. Go to"
+
+#: .\templates\login.html:6 .\templates\main.html:6 .\templates\register.html:6
+msgid "в профиль"
+msgstr "profile"
+
+#: .\templates\logout.html:5
+msgid "Вы вышли... Досадно..."
+msgstr "You have logged out... Bummer..."
+
+#: .\templates\logout.html:8 .\templates\main.html:16
+#: .\templates\register.html:26
+msgid "Войти"
+msgstr "Log in"
+
+#: .\templates\main.html:10
+msgid ""
+"Присоединяйтесь к нашему облачному хранилищу для командного пользования!"
+msgstr ""
+"Join our cloud storage for team usage!"
+
+#: .\templates\main.html:12 .\templates\register.html:19
+msgid "Зарегистрироваться"
+msgstr "Sign up"
+
+#: .\templates\main.html:14 .\templates\register.html:26
+msgid "Уже есть аккаунт?"
+msgstr "Already have an account?"
+
+#: .\templates\payment_handle.html:5
+msgid "Вы успешно преобрели тариф!"
+msgstr "You have successfully purchased a plan!"
+
+#: .\\templates\profile.html:15
+msgid "Ваш профиль"
+msgstr "Your profile"
+
+#: .\templates\profile.html:22
+msgid "Обновить"
+msgstr "Update"
+
+#: .\templates\profile.html:29
+msgid "Выйти"
+msgstr "Log out"
+
+#: .\templates\register.html:13
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#: .\templates\tarifs.html:6
+msgid "Обеспечьте безопасное хранение своих"
+msgstr "Ensure secure storage of your"
+
+#: .\templates\tarifs.html:6
+msgid "файлов. И не только"
+msgstr "files. And more"
+
+#: .\templates\tarifs.html:7
+msgid "Любой необходимый вам объем зашифрованного хранилища."
+msgstr "Any necessary volume of encrypted storage you need."
+
+#: .\templates\tarifs.html:7
+msgid "Включает в себя Teammeee Transfer, Teammeee Back up."
+msgstr "Includes Teammeee Transfer, Teammeee Back up."
+
+#: .\templates\tarifs.html:19
+msgid "Ежемесячное выставление счетов"
+msgstr "Monthly billing"
+
+#: .\templates\tarifs.html:22
+msgid "Ежегодное выставление счетов"
+msgstr "Yearly billing"
+
+#: .\templates\tarifs.html:34
+msgid "Тариф \"Для небольшой команды\"."
+msgstr "Plan \"For Small Teams\"."
+
+#: .\templates\tarifs.html:35 .\templates\tarifs.html:56
+#: .\templates\tarifs.html:76 .\templates\tarifs.html:97
+msgid "в месяц"
+msgstr "per month"
+
+#: .\templates\tarifs.html:36 .\templates\tarifs.html:57
+#: .\templates\tarifs.html:77 .\templates\tarifs.html:98
+#: .\templates\tarifs.html:125 .\templates\tarifs.html:146
+#: .\templates\tarifs.html:166 .\templates\tarifs.html:187
+msgid "Купить"
+msgstr "Buy"
+
+#: .\templates\tarifs.html:42 .\templates\tarifs.html:131
+msgid "от 4 пользователей."
+msgstr "From 4 users."
+
+#: .\templates\tarifs.html:43 .\templates\tarifs.html:132
+msgid "1 ТБ (1000 ГБ)"
+msgstr "1 TB (1000 GB)"
+
+#: .\templates\tarifs.html:44 .\templates\tarifs.html:133
+msgid "Подсоединение неограниченного количества устройств "
+msgstr "Connect an unlimited number of devices"
+
+#: .\templates\tarifs.html:45 .\templates\tarifs.html:86
+#: .\templates\tarifs.html:134 .\templates\tarifs.html:175
+msgid "Восстановление файлов и аккаунтов в течение 30 дней "
+msgstr "Recovery of files and accounts within 30 days"
+
+#: .\templates\tarifs.html:46 .\templates\tarifs.html:135
+msgid "Пересылка больших файлов с помощью Teamee Transfer (до 1 ГБ)"
+msgstr "Send large files using Teamee Transfer (up to 1 GB)"
+
+#: .\templates\tarifs.html:55
+msgid "Для компактной команды."
+msgstr "For compact teams."
+
+#: .\templates\tarifs.html:63 .\templates\tarifs.html:152
+msgid "от 10 пользователей."
+msgstr "From 10 users."
+
+#: .\templates\tarifs.html:64 .\templates\tarifs.html:153
+msgid "5 ТБ (5000 ГБ)"
+msgstr "5 TB (5000 GB)"
+
+#: .\templates\tarifs.html:65 .\templates\tarifs.html:85
+#: .\templates\tarifs.html:154 .\templates\tarifs.html:174
+msgid "Подсоединение неограниченного количества устройств"
+msgstr "Connect an unlimited number of devices"
+
+#: .\templates\tarifs.html:66 .\templates\tarifs.html:155
+msgid "Восстановление файлов и аккаунтов в течение 30 дней"
+msgstr "Recovery of files and accounts within 30 days"
+
+#: .\templates\tarifs.html:67 .\templates\tarifs.html:156
+msgid "Пересылка больших файлов с помощью Teamee Transfer (до 5 ГБ)"
+msgstr "Send large files using Teamee Transfer (up to 5 GB)"
+
+#: .\templates\tarifs.html:75
+msgid "Для большой команды."
+msgstr "For large teams."
+
+#: .\templates\tarifs.html:83 .\templates\tarifs.html:172
+msgid "от 15 пользователей"
+msgstr "From 15 users"
+
+#: .\templates\tarifs.html:84 .\templates\tarifs.html:173
+msgid "10 ТБ (10000 ГБ)"
+msgstr "10 TB (10000 GB)"
+
+#: .\templates\tarifs.html:87 .\templates\tarifs.html:176
+msgid "Пересылка больших файлов с помощью Teamee Transfer (до 10 ГБ) "
+msgstr "Send large files using Teamee Transfer (up to 10 GB)"
+
+#: .\templates\tarifs.html:88 .\templates\tarifs.html:177
+msgid "Автоматическое создание резервных копий "
+msgstr "Automatic backup creation"
+
+#: .\templates\tarifs.html:124 .\templates\tarifs.html:145
+#: .\templates\tarifs.html:165 .\templates\tarifs.html:186
+msgid "в год"
+msgstr "per year"

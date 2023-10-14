@@ -91,6 +91,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -147,6 +148,17 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'ru-ru'
+
+LANGUAGES = [
+    ('ru', 'Russian'),
+    ('en', 'English'),
+    ('zh-hans', 'Chinese'),
+    ('es', 'Spanish'),
+    ('pt', 'Portugal'),
+    ('fr', 'French'),
+    ('de', 'German'),
+    ('pl', 'Polish'),
+]
 
 TIME_ZONE = 'Europe/Moscow'
 
