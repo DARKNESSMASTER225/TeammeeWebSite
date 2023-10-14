@@ -3,7 +3,7 @@
 {% block content %}
     <div class="content-section">
         {% if user.is_authenticated %}
-                <p>Вы уже авторизованы. Перейти в <a href="{% url 'profile' %}">личный кабинет</a>?
+                <p>{% translate 'Вы уже авторизированны. Перейти' %} <a href="{% url 'profile' %}">{% translate 'в профиль' %}</a>?
                 {% endif %}
             {% if not user.is_authenticated %}
                                         <form method="POST">

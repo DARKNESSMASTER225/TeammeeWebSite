@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 {% block content %}
     <div class="content-section">
     {% if user.is_authenticated %}
-                <p>Вы уже авторизованы. Перейти в <a href="{% url 'profile' %}">личный кабинет</a>?
+                <p>{% translate 'You already login. Go to ' %} <a href="{% url 'profile' %}">{% translate 'profile' %}</a>?
                 {% endif %}
             {% if not user.is_authenticated %}
                 <div class="my-form">
                     <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Добро пожаловать</legend>
+                <legend class="border-bottom mb-4">{% translate 'welcome' %}</legend>
                 {{ form|crispy }}
             </fieldset>
                         <div class="form-control my-custom-element">
                                                 </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Регистрация</button>
+                <button type="submit" class="btn btn-primary">{% translate 'signin' %}</button>
             </div>
                         <div class="form-control my-custom-element">
                                                 </div>
                     </div>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Уже есть аккаунт? <a class="ml-2" href="{% url 'login' %}">Вход</a>
+                {% translate 'already have account?' %} <a class="ml-2" href="{% url 'login' %}">{% translate 'voiti' %}</a>
             </small>
         </div>
         {% endif %}

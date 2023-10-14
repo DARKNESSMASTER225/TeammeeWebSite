@@ -1,19 +1,19 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block content %}
     <div class="container">
         {% if user.is_authenticated %}
-                <p>Вы уже авторизованы. Перейти в <a href="{% url 'profile' %}">личный кабинет</a>?
+                <p>{% translate 'Вы уже авторизированны. Перейти' %} <a href="{% url 'profile' %}">{% translate 'в профиль' %}</a>?
                 {% endif %}
             {% if not user.is_authenticated %}
                         <h1>Добро пожаловать!</h1>
-        <p>Присоединяйтесь к нашему облачному хранилищу для командного пользования!</p>
+        <p>{% translate 'Присоединяйтесь к нашему облачному хранилищу для командного пользования!' %}</p>
         <div>
-            <a href="{% url 'register' %}" class="btn btn-primary">Зарегистрироваться</a>
+            <a href="{% url 'register' %}" class="btn btn-primary">{% translate 'Зарегистрироваться' %}</a>
         </div>
-        <p>Уже имеете аккаунт?</p>
+        <p>{% translate 'Уже есть аккаунт?' %}</p>
         <div>
-            <a href="{% url 'login' %}" class="btn btn-secondary">Войти</a>
+            <a href="{% url 'login' %}" class="btn btn-secondary">{% translate 'Войти' %}</a>
         </div>
         {% endif %}
 

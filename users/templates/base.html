@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +30,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'main' %}">Главная</a>
+                    <a class="nav-link" href="{% url 'main' %}">{% translate 'Главная' %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'tariffs' %}">Тарифы</a>
+                    <a class="nav-link" href="{% url 'tariffs' %}">{% translate 'Тарифы' %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">Личный кабинет</a>
+                    <a class="nav-link" href="{% url 'profile' %}">{% translate 'Профиль' %}</a>
                 </li>
             </ul>
         </div>
