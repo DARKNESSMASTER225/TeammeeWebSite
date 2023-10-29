@@ -4,12 +4,14 @@
 <div id="intellectmoney-payform">
     <script async type="text/javascript">
       fetch('https://merch.intellectmoney.ru/payform/' +
-          '?EshopId=466244' +
+          '?EshopId=466499' +
           '&ServiceNameAuthor=0' +
           '&ServiceName={{ tariff }}' +
           '&PaymentAmountIsReadonly=true' +
           '&PaymentAmount={{ payment_amount }}' +
-          '&PaymentCurrency=%E2%82%BD&ButtonName=0' +
+          {#'&PaymentCurrency=%E2%82%BD' +#}
+          '&PaymentCurrency=TST' +
+          '&ButtonName=0' +
           '&Preferences=' +
           '&PayerData=' +
           '&Comment=false' +
@@ -22,6 +24,8 @@
                 '%2Fhandepayment' +
                 '%2F%3Ftariff_id%3D{{ tariff_id }}' +
                 '%26payment_amount%3D{{ payment_amount }}' +
+                '%26tariff_exp%3D{{ tariff_exp }}' +
+                '%26volume%3D{{ volume }}' +
           '&OpenNewWindow=true' +
           '&MerchantReceipt=%7B%22Content%22%3A%7B%22Type%22%3A1%2C%22Positions%22%3A%5B%5D%7D%7D')
         .then(res => res.text())

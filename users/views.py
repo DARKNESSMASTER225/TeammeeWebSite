@@ -1,12 +1,14 @@
 import datetime
 
+from django.db import transaction
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 from rest_framework.permissions import IsAuthenticated
-from .models import Profile
+from .models import Profile, Group
 from .serializers import ProfileSerializer
 
 from rest_framework.response import Response
@@ -38,26 +40,39 @@ def main(request):
 
 def handle_payment(request):
     tariff_id = request.GET.get('tariff_id')
+    tariff_exp = request.GET.get('tariff_exp')
+    volume = request.GET.get('volume')
+    tariff_exp_date = datetime.date.today() + datetime.timedelta(days=int(tariff_exp) * 30)
     user = request.user
-    user.profile.tarif_level = tariff_id
-    if int(tariff_id) in [1, 2, 3, 4]:
-        user.profile.tariff_exp = datetime.date.today() + datetime.timedelta(days=30)
-    elif int(tariff_id) in [5, 6, 7, 8]:
-        user.profile.tariff_exp = datetime.date.today() + datetime.timedelta(days=365)
-    user.save()
+    try:
+        with transaction.atomic():
+            group = Group(
+                tariff_level=tariff_id,
+                tariff_exp=tariff_exp_date,
+                volume=volume,
+                owner=user
+            )
+            group.save()
+            user.group = group
+            user.save()
+            group.members.add(user)
+            group.save()
+            return render(request, 'payment_handle.html')
+    except Exception:
+        return HttpResponseNotFound()
 
-    return render(request, 'payment_handle.html')
 
 
 def checkout(request):
     tariff = request.GET.get('tariff')
-    tariff_id = request.GET.get('id')
+    tariff_id = request.GET.get('tariff_id')
     payment_amount = request.GET.get('payment_amount')
+    tariff_exp = request.GET.get('tariff_exp')
+    volume = request.GET.get('volume')
+    return render(request, 'tariff_checkout.html', {'volume': volume, 'tariff': tariff, 'tariff_exp': tariff_exp, 'tariff_id': tariff_id, 'payment_amount': payment_amount})
 
-    return render(request, 'tariff_checkout.html', {'tariff': tariff, 'tariff_id': tariff_id, 'payment_amount': payment_amount})
 
-
-def tarifs(request):
+def tariffs(request):
     return render(request, 'tarifs.html')
 
 

@@ -1,11 +1,12 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render
-from requests import Response
 from rest_framework import generics, permissions
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from api.models import Storage
-from api.serializers import StorageSerializer
+from api.serializers import StorageSerializer, RegisterSerializer, EditAccessLayerSerializer
+from users.models import Profile
 
 
 # Create your views here.
@@ -16,18 +17,74 @@ class StorageListView(generics.ListAPIView):
 
 
 @api_view(['POST'])
-def create_slave_profile(request):
-    email = request.POST.get['email']
-    password = request.POST.get['password']
-    profile = request.user.profile
-    profile.image = None
-    user = User(email=email, password=password, profile=profile).save()
-    return Response(user)
+def register_group_user(request):
+    if request.user.profile.access_layer in [0, 1]:
+        serializer = RegisterSerializer(data=request.data)
+        if serializer.is_valid():
+            user = User.objects.create_user(
+                username=serializer.data.get('username'),
+                email=serializer.data.get('email'),
+                password=serializer.data.get('password'),
+            )
+            user.save()
+            user.profile.access_layer = serializer.data.get('access_layer')
+            user.save()
+
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+    else:
+        return Response(status=401)
 
 
 @api_view(['GET'])
-def get_all_slaves_profile(request):
+def get_info(request):
     user = request.user
-    group_id = user.profile.group_id
-    slaves = User.objects.filter(profile__group=group_id)
-    return slaves
+    response = {
+        'username': user.username,
+        'access_layer': user.profile.access_layer,
+        'group_id': user.group.id,
+    }
+    return Response(response)
+
+
+@api_view(['GET'])
+def get_group_members(request):
+    group = request.user.group
+    members = group.members.order_by('profile__access_layer').all()
+    response: [dict] = []
+    for member in members:
+        response.append(
+            {
+                'username': member.username,
+                'access_layer': member.profile.access_layer,
+            }
+        )
+    return Response(response)
+
+
+@api_view(['POST'])
+def edit_access_layer(request):
+    if request.user.profile.access_layer in [0, 1]:
+        serializer = EditAccessLayerSerializer(
+            data=request.data
+        )
+        if serializer.is_valid():
+            data = request.user.group.members.filter(username=serializer.data.get('username')).first()
+            data.profile.access_layer = serializer.data.get('access_layer')
+            data.save()
+            return Response(status=200)
+        else:
+            return Response(serializer.errors)
+    else:
+        return Response(status=401)
+
+
+@api_view(['DELETE'])
+def delete_user(request):
+    if request.user.profile.access_layer in [0, 1]:
+        username = request.GET.get('username')
+        User.objects.filter(username=username).delete()
+        return Response(status=201)
+    else:
+        return Response(status=401)

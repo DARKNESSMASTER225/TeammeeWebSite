@@ -8,5 +8,4 @@ class Storage(models.Model):
     access_key_id = models.CharField(max_length=255)
     secret_access_key = models.CharField(max_length=255)
     region = models.CharField(max_length=255)
-    bucket = models.CharField(max_length=255)
 
