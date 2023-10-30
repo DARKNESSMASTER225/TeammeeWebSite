@@ -18,7 +18,6 @@ urlpatterns = [
     path('tariff/checkout/', user_views.checkout),
     path('', include('api.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
-    re_path(r'^contact/', include('contactus.urls')),
 ]
 
 if settings.DEBUG:

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'rest_framework',
     'rest_framework_simplejwt',
-    'contactus',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

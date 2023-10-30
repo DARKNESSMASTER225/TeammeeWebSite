@@ -11,20 +11,20 @@
                     <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">{% translate 'welcome' %}</legend>
+                <legend class="border-bottom mb-4">{% translate 'Добро пожаловать' %}</legend>
                 {{ form|crispy }}
             </fieldset>
                         <div class="form-control my-custom-element">
                                                 </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">{% translate 'signin' %}</button>
+                <button type="submit" class="btn btn-primary">{% translate 'Зарегистрироваться' %}</button>
             </div>
                         <div class="form-control my-custom-element">
                                                 </div>
                     </div>
         <div class="border-top pt-3">
             <small class="text-muted">
-                {% translate 'already have account?' %} <a class="ml-2" href="{% url 'login' %}">{% translate 'voiti' %}</a>
+                {% translate 'Уже есть аккаунт?' %} <a class="ml-2" href="{% url 'login' %}">{% translate 'Войти' %}</a>
             </small>
         </div>
         {% endif %}

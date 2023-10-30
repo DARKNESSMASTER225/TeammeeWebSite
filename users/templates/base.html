@@ -14,14 +14,16 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light"
+     style="--bs-navbar-padding-x: 0;
+    --bs-navbar-padding-y: 0;">
     <!-- Кнопка - значок -->
 
 
     <div class="container-fluid my-element5">
 
         <!-- Значок сайта (favicon) -->
-        <img src="favicon.png" alt="Favicon" class="site-icon">
+        <img src="{% static 'img/subscribtions/favicon.png' %}" alt="Favicon" class="site-icon">
 
         <!-- Надпись "Te" -->
         <a class="navbar-brand" href="{% url 'main' %}">Teammeee</a>
