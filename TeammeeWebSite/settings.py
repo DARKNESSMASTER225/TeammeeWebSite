@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'rest_framework',
     'rest_framework_simplejwt',
+    'contactus',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CONTACT_US_EMAIL = 'dsad@asdasd.sda'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -111,6 +114,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -159,6 +163,10 @@ LANGUAGES = [
     ('de', 'German'),
     ('pl', 'Polish'),
 ]
+
+LOCALE_PATHS = (
+    os.path.join(os.path.dirname(__file__), "locale"),
+)
 
 TIME_ZONE = 'Europe/Moscow'
 

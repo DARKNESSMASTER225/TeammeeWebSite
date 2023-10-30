@@ -1,7 +1,10 @@
+import datetime
+
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from api.models import Storage
@@ -17,6 +20,7 @@ class StorageListView(generics.ListAPIView):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def register_group_user(request):
     if request.user.profile.access_layer in [0, 1]:
         serializer = RegisterSerializer(data=request.data)
@@ -38,17 +42,30 @@ def register_group_user(request):
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def get_info(request):
+    date = datetime.date.today()
     user = request.user
-    response = {
-        'username': user.username,
-        'access_layer': user.profile.access_layer,
-        'group_id': user.group.id,
-    }
-    return Response(response)
+    if user.group.tariff_exp <= date:
+        user.group.tariff_level = 0
+        user.group.tariff_exp = None
+        user.group.volume = 0
+        user.group.save()
+        user.save()
+        return Response({
+            'error': 'tariff expired'
+        })
+    else:
+        response = {
+            'username': user.username,
+            'access_layer': user.profile.access_layer,
+            'group_id': user.group.id,
+        }
+        return Response(response)
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def get_group_members(request):
     group = request.user.group
     members = group.members.order_by('profile__access_layer').all()
@@ -64,6 +81,7 @@ def get_group_members(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def edit_access_layer(request):
     if request.user.profile.access_layer in [0, 1]:
         serializer = EditAccessLayerSerializer(
@@ -81,6 +99,7 @@ def edit_access_layer(request):
 
 
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
 def delete_user(request):
     if request.user.profile.access_layer in [0, 1]:
         username = request.GET.get('username')
