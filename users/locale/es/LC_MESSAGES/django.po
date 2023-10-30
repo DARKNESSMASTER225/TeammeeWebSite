@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-30 02:48+0300\n"
+"POT-Creation-Date: 2023-10-30 11:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,9 +106,8 @@ msgstr "Facturación mensual"
 msgid "Ежегодное выставление счетов"
 msgstr "Facturación anual"
 
-#: .\users\templates\tarifs.html:37
-#, fuzzy
-#| msgid "Для большой команды."
+#: .\users\templates\tarifs.html:37 .\users\templates\tarifs.html:148
+
 msgid "Для небольшой команды."
 msgstr "Para equipos grandes."
 
@@ -118,91 +117,87 @@ msgid "в месяц"
 msgstr "por mes"
 
 #: .\users\templates\tarifs.html:39 .\users\templates\tarifs.html:71
-#: .\users\templates\tarifs.html:102 .\users\templates\tarifs.html:159
-#: .\users\templates\tarifs.html:191 .\users\templates\tarifs.html:222
+#: .\users\templates\tarifs.html:102 .\users\templates\tarifs.html:150
+#: .\users\templates\tarifs.html:182 .\users\templates\tarifs.html:213
 msgid "Купить"
 msgstr "Comprar"
 
 #: .\users\templates\tarifs.html:44 .\users\templates\tarifs.html:76
-#: .\users\templates\tarifs.html:107 .\users\templates\tarifs.html:164
-#: .\users\templates\tarifs.html:196 .\users\templates\tarifs.html:227
+#: .\users\templates\tarifs.html:107 .\users\templates\tarifs.html:155
+#: .\users\templates\tarifs.html:187 .\users\templates\tarifs.html:218
 msgid "Выберете количесвто гигабайт в тарифе:"
 msgstr "Elija la cantidad de gigabytes en la tarifa:"
 
-#: .\users\templates\tarifs.html:56 .\users\templates\tarifs.html:176
+#: .\users\templates\tarifs.html:56 .\users\templates\tarifs.html:167
 msgid "от 4 пользователей."
 msgstr "A partir de 4 usuarios."
 
-#: .\users\templates\tarifs.html:57 .\users\templates\tarifs.html:177
+#: .\users\templates\tarifs.html:57 .\users\templates\tarifs.html:168
 msgid "1 ТБ (1000 ГБ)"
 msgstr "1 TB (1000 GB)"
 
-#: .\users\templates\tarifs.html:58 .\users\templates\tarifs.html:178
+#: .\users\templates\tarifs.html:58 .\users\templates\tarifs.html:169
 msgid "Подсоединение неограниченного количества устройств "
 msgstr "Conexión de un número ilimitado de dispositivos"
 
 #: .\users\templates\tarifs.html:59 .\users\templates\tarifs.html:122
-#: .\users\templates\tarifs.html:179 .\users\templates\tarifs.html:242
+#: .\users\templates\tarifs.html:170 .\users\templates\tarifs.html:233
 msgid "Восстановление файлов и аккаунтов в течение 30 дней "
 msgstr "Recuperación de archivos y cuentas en un plazo de 30 días"
 
-#: .\users\templates\tarifs.html:60 .\users\templates\tarifs.html:180
+#: .\users\templates\tarifs.html:60 .\users\templates\tarifs.html:171
 msgid "Пересылка больших файлов с помощью Teamee Transfer (до 1 ГБ)"
 msgstr "Envío de archivos grandes utilizando Teamee Transfer (hasta 1 GB)"
 
-#: .\users\templates\tarifs.html:69
+#: .\users\templates\tarifs.html:69 .\users\templates\tarifs.html:180
 msgid "Для компактной команды."
 msgstr "Para equipos compactos."
 
-#: .\users\templates\tarifs.html:88 .\users\templates\tarifs.html:208
+#: .\users\templates\tarifs.html:88 .\users\templates\tarifs.html:199
 msgid "от 10 пользователей."
 msgstr "A partir de 10 usuarios."
 
-#: .\users\templates\tarifs.html:89 .\users\templates\tarifs.html:209
+#: .\users\templates\tarifs.html:89 .\users\templates\tarifs.html:200
 msgid "5 ТБ (5000 ГБ)"
 msgstr "5 TB (5000 GB)"
 
 #: .\users\templates\tarifs.html:90 .\users\templates\tarifs.html:121
-#: .\users\templates\tarifs.html:210 .\users\templates\tarifs.html:241
+#: .\users\templates\tarifs.html:201 .\users\templates\tarifs.html:232
 msgid "Подсоединение неограниченного количества устройств"
 msgstr "Conexión de un número ilimitado de dispositivos"
 
-#: .\users\templates\tarifs.html:91 .\users\templates\tarifs.html:211
+#: .\users\templates\tarifs.html:91 .\users\templates\tarifs.html:202
 #, fuzzy
 #| msgid "Восстановление файлов и аккаунтов в течение 30 дней "
 msgid "Восстановление файлов и аккаунтов в течение 30 дней"
 msgstr "Recuperación de archivos y cuentas en un plazo de 30 días"
 
-#: .\users\templates\tarifs.html:92 .\users\templates\tarifs.html:212
+#: .\users\templates\tarifs.html:92 .\users\templates\tarifs.html:203
 msgid "Пересылка больших файлов с помощью Teamee Transfer (до 5 ГБ)"
 msgstr "Envío de archivos grandes utilizando Teamee Transfer (hasta 5 GB)"
 
-#: .\users\templates\tarifs.html:100
+#: .\users\templates\tarifs.html:100 .\users\templates\tarifs.html:211
 msgid "Для большой команды."
 msgstr "Para equipos grandes."
 
-#: .\users\templates\tarifs.html:119 .\users\templates\tarifs.html:239
+#: .\users\templates\tarifs.html:119 .\users\templates\tarifs.html:230
 msgid "от 15 пользователей"
 msgstr "A partir de 15 usuarios"
 
-#: .\users\templates\tarifs.html:120 .\users\templates\tarifs.html:240
+#: .\users\templates\tarifs.html:120 .\users\templates\tarifs.html:231
 msgid "10 ТБ (10000 ГБ)"
 msgstr "10 TB (10000 GB)"
 
-#: .\users\templates\tarifs.html:123 .\users\templates\tarifs.html:243
+#: .\users\templates\tarifs.html:123 .\users\templates\tarifs.html:234
 msgid "Пересылка больших файлов с помощью Teamee Transfer (до 10 ГБ) "
 msgstr "Envío de archivos grandes utilizando Teamee Transfer (hasta 10 GB)"
 
-#: .\users\templates\tarifs.html:124 .\users\templates\tarifs.html:244
+#: .\users\templates\tarifs.html:124 .\users\templates\tarifs.html:235
 msgid "Автоматическое создание резервных копий "
 msgstr "Creación automática de copias de seguridad"
 
-#: .\users\templates\tarifs.html:135 .\users\templates\tarifs.html:253
-msgid "Связаться с нами"
-msgstr ""
-
-#: .\users\templates\tarifs.html:158 .\users\templates\tarifs.html:190
-#: .\users\templates\tarifs.html:221
+#: .\users\templates\tarifs.html:149 .\users\templates\tarifs.html:181
+#: .\users\templates\tarifs.html:212
 msgid "в год"
 msgstr "por año"
 
