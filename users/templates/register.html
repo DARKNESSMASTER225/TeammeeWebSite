@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% block content_short %}
     <div class="content-section">
     {% if user.is_authenticated %}
                 <p>{% translate 'Вы уже авторизированны. Перейти' %} <a href="{% url 'profile' %}">{% translate 'в профиль' %}</a>?

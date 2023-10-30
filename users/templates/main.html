@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block content %}
+{% block content_short %}
     <div class="container">
         {% if user.is_authenticated %}
                 <p>{% translate 'Вы уже авторизированны. Перейти' %} <a href="{% url 'profile' %}">{% translate 'в профиль' %}</a>?

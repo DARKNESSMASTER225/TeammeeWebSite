@@ -5,7 +5,7 @@ from .models import Profile
 
 
 class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField(ыmax_length=30)
+    email = forms.EmailField(max_length=30)
 
     class Meta:
         model = User
