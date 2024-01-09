@@ -31,7 +31,7 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'users/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 
 def main(request):
@@ -62,14 +62,15 @@ def handle_payment(request):
         return HttpResponseNotFound()
 
 
-
 def checkout(request):
     tariff = request.GET.get('tariff')
     tariff_id = request.GET.get('tariff_id')
     payment_amount = request.GET.get('payment_amount')
     tariff_exp = request.GET.get('tariff_exp')
     volume = request.GET.get('volume')
-    return render(request, 'tariff_checkout.html', {'volume': volume, 'tariff': tariff, 'tariff_exp': tariff_exp, 'tariff_id': tariff_id, 'payment_amount': payment_amount})
+    return render(request, 'tariff_checkout.html',
+                  {'volume': volume, 'tariff': tariff, 'tariff_exp': tariff_exp, 'tariff_id': tariff_id,
+                   'payment_amount': payment_amount})
 
 
 def tariffs(request):
@@ -98,4 +99,4 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'profile.html', context)

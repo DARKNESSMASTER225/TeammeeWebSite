@@ -90,7 +90,6 @@ def get_info(request):
         pass
 
 
-
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_group_members(request):
