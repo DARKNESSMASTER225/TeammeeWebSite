@@ -25,6 +25,7 @@ class ProfileUpdateForm(forms.ModelForm):
         model = Profile
         fields = ['image']
 
+
 def save(self, commit=True):
     user = super(UserRegisterForm, self).save(commit=False)
     user.set_password(self.cleaned_data["password"])
