@@ -17,6 +17,7 @@ urlpatterns = [
     path('handepayment/', user_views.handle_payment),
     path('tariff/checkout/', user_views.checkout),
     path('', include('api.urls')),
+    path('', include('auditlog.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 

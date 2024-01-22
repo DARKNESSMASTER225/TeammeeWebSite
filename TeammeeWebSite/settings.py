@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-j=$6r68ci7%q(xzodl2!rxz3=hl4r(-f@3*=sv8!a54bc*8v^_
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['26.169.113.181', '127.0.0.1']
+ALLOWED_HOSTS = ['26.169.113.181', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'api',
+    'auditlog',
     'crispy_forms',
     'crispy_bootstrap4',
     'rest_framework',
