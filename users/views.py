@@ -5,9 +5,11 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+#from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 from rest_framework.permissions import IsAuthenticated
+
+from users.forms import UserUpdateForm
 from .models import Profile, Group
 from .serializers import ProfileSerializer
 
@@ -92,11 +94,14 @@ def profile(request):
 
     else:
         u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
+        #p_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
         'u_form': u_form,
-        'p_form': p_form
     }
 
     return render(request, 'profile.html', context)
+
+
+def support(request):
+    return render(request, 'support.html')

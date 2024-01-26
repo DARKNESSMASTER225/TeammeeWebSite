@@ -6,4 +6,10 @@ class ActionFileSerializer(serializers.ModelSerializer):
     comment = serializers.CharField(max_length=150, required=False)
     class Meta:
         model = AuditLogModel
-        fields = ['file_name', 'action', 'user', 'datestamp', 'comment']
+        fields = ['file_name', 'action', 'datestamp', 'comment']
+
+
+class ActionFileModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AuditLogModel
+        fields = '__all__'

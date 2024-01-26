@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
+{% load i18n %}
 {% block content_short %}
     <div class="content-section">
       <div class="media">
-        <img class="rounded-circle account-img" src="{% static 'img/default.jpg'%} #}">
+        <img class="rounded-circle account-img" src="{% static 'img/default.jpg'%}}">
         <div class="media-body">
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>
@@ -25,10 +26,14 @@
            <div class="form-control my-custom-element">
                                                 </div>
       </form>
+
+        
+
     <div class="border-top pt-3">
             <small class="text-muted">
-                <a class="ml-2" href="{% url 'logout' %}">{% translate 'Выйти' %}</a>
+                <a class="btn btn-danger" href="{% url 'logout' %}">{% translate 'Выйти' %}</a>
             </small>
         </div>
     </div>
-{% endblock content %}
+
+{% endblock content_short %}
