@@ -135,8 +135,7 @@ def delete_user(request):
         try:
             user.delete()
         except AttributeError as e:
-            print('хуй ', e)
-            return Response(data=e.name, status=501)
+            return Response(data={'error': str(e)}, status=501)
         return Response(data=user.id, status=201)
     else:
         return Response(status=401)
