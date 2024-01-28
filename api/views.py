@@ -133,7 +133,6 @@ def delete_user(request):
         username = request.GET.get('username')
         user = User.objects.filter(username=username)
         user.delete()
-        user.save()
         return Response(data=user.id, status=201)
     else:
         return Response(status=401)
