@@ -12,7 +12,7 @@ urlpatterns = [
     path('', user_views.main, name='main'),
     path('accounts/profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('logout/', user_views.logout_view, name='logout'),
     path('tariffs', user_views.tariffs, name='tariffs'),
     path('handepayment/', user_views.handle_payment),
     path('tariff/checkout/', user_views.checkout),
