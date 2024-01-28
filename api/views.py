@@ -131,7 +131,9 @@ def edit_access_layer(request):
 def delete_user(request):
     if request.user.profile.access_layer in [0, 1]:
         username = request.GET.get('username')
-        User.objects.filter(username=username).delete()
-        return Response(status=201)
+        user = User.objects.filter(username=username)
+        user.delete()
+        user.save()
+        return Response(data=user.id, status=201)
     else:
         return Response(status=401)
