@@ -36,9 +36,9 @@ def register_group_user(request):
             user.profile.access_layer = serializer.data.get('access_layer')
             user.save()
 
-            return Response(serializer.data, status=501)
+            return Response(serializer.data)
         else:
-            return Response(serializer.errors)
+            return Response(serializer.errors, status=501)
     else:
         return Response(status=401)
 
