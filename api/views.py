@@ -36,7 +36,7 @@ def register_group_user(request):
             user.profile.access_layer = serializer.data.get('access_layer')
             user.save()
 
-            return Response(serializer.data)
+            return Response(serializer.data, status=501)
         else:
             return Response(serializer.errors)
     else:
@@ -51,7 +51,7 @@ def get_info(request):
     try:
         if user.group and type(user.group.tariff_exp) == NoneType:
             return Response({
-                'error': 'tariff expired or don\'t hava any tariff'
+                'error': 'tariff expired or don\'t have any tariff'
             })
         if user.group.tariff_exp <= date:
             user.group.tariff_level = 0
