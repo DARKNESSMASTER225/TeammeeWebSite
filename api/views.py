@@ -132,7 +132,10 @@ def delete_user(request):
     if request.user.profile.access_layer in [0, 1]:
         username = request.GET.get('username')
         user = User.objects.filter(username=username).first()
-        user.delete()
+        try:
+            user.delete()
+        except AttributeError as e:
+            return Response(data=e.name, status=501)
         return Response(data=user.id, status=201)
     else:
         return Response(status=401)
