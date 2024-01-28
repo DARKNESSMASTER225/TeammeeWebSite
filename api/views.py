@@ -34,6 +34,8 @@ def register_group_user(request):
             )
             user.save()
             user.profile.access_layer = serializer.data.get('access_layer')
+            request.user.group.members.add(user)
+            request.user.group.save()
             user.save()
 
             return Response(serializer.data)
