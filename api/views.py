@@ -51,16 +51,16 @@ def get_info(request):
     date = datetime.date.today()
     user = request.user
     try:
-        if user.group and type(user.group.tariff_exp) == NoneType:
+        if user.group_member.group and type(user.group_member.group.tariff_exp) == NoneType:
             return Response({
                 'error': 'tariff expired or don\'t have any tariff'
             })
-        if user.group.tariff_exp <= date:
-            user.group.tariff_level = 0
-            user.group.tariff_exp = None
-            user.group.volume = 0
-            user.group.save()
-            user.save()
+        if user.group_member.group.tariff_exp <= date:
+            user.group_member.group.tariff_level = 0
+            user.group_member.group.tariff_exp = None
+            user.group_member.group.volume = 0
+            user.group_member.group.save()
+            user.group_member.save()
             return Response({
                 'error': 'tariff expired'
             })
