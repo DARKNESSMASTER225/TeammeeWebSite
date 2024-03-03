@@ -53,7 +53,7 @@ def get_info(request):
     try:
         if user.group_member: # and type(user.group.tariff_exp) == NoneType:
             return Response({
-                'error': f'{Group.members.filter(tariff_exp__isnull=False)[0]}'
+                'error': f'{Group.members}'
             })
         if user.group.tariff_exp <= date:
             user.group.tariff_level = 0
