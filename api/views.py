@@ -51,9 +51,9 @@ def get_info(request):
     date = datetime.date.today()
     user = request.user
     try:
-        if user.group_member:
+        if user.group_member: # and type(user.group.tariff_exp) == NoneType:
             return Response({
-                'error': f'{user.group_member}'
+                'error': f'{Group.members.filter(tariff_exp__isnull=False)[0]}'
             })
         if user.group.tariff_exp <= date:
             user.group.tariff_level = 0
