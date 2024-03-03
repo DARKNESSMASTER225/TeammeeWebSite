@@ -53,7 +53,7 @@ def get_info(request):
     try:
         if user.group_member:
             return Response({
-                'error': user.group_member
+                'error': f'{user.group_member}'
             })
         if user.group.tariff_exp <= date:
             user.group.tariff_level = 0
