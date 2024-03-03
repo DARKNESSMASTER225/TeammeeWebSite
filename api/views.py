@@ -50,17 +50,17 @@ def register_group_user(request):
 def get_info(request):
     date = datetime.date.today()
     user = request.user
+    group = Group.objects.filter(members=user.id)[0]
     try:
-        if user.group_member: # and type(user.group.tariff_exp) == NoneType:
+        if group and type(group.tariff_exp) == NoneType:
             return Response({
-                'error': f'{Group.objects.filter(members=user.id)[0].username} sada'
+                'error': 'tariff expired or don\'t have any tariff'
             })
-        if user.group.tariff_exp <= date:
-            user.group.tariff_level = 0
-            user.group.tariff_exp = None
-            user.group.volume = 0
-            user.group.save()
-            user.save()
+        if group.tariff_exp <= date:
+            group.tariff_level = 0
+            group.tariff_exp = None
+            group.volume = 0
+            group.save()
             return Response({
                 'error': 'tariff expired'
             })
