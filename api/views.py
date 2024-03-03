@@ -71,6 +71,10 @@ def get_info(request):
                 'group_id': user.group.id,
             }
             return Response(response)
+    except TypeError:
+        return Response({
+                'error': 'tariff expired or don\'t have any tariff'
+            })
     except django.contrib.auth.models.User.group.RelatedObjectDoesNotExist:
         group = user.group_member.first()
         if group.tariff_exp <= date:
