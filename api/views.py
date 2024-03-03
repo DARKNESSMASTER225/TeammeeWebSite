@@ -51,7 +51,7 @@ def get_info(request):
     date = datetime.date.today()
     user = request.user
     try:
-        if user.group_member and type(user.group.tariff_exp) == NoneType:
+        if user.group_member:
             return Response({
                 'error': user.group_member
             })
