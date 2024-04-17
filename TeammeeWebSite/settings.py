@@ -135,7 +135,7 @@ DATABASES = {
         'NAME': 'teameedb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'endlessnightNIGGER228',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
