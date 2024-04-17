@@ -44,8 +44,8 @@ matplotlib-inline==0.1.6
 more-itertools==10.1.0
 mpremote==1.20.0
 msgpack==1.0.7
-mysqlclient==2.2.0
 nest-asyncio==1.5.8
+psycopg2==2.9.9
 packaging==23.2
 parso==0.8.3
 pexpect==4.8.0
