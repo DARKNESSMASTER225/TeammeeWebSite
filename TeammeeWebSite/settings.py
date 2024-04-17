@@ -122,13 +122,21 @@ TEMPLATES = [
 WSGI_APPLICATION = 'TeammeeWebSite.wsgi.application'
 
 DATABASES = {
+    # {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'teameedb',
+    #     'USER': 'root',
+    #     'PASSWORD': 'endlessnightNIGGER228',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'teameedb',
-        'USER': 'root',
-        'PASSWORD': 'endlessnightNIGGER228',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'endlessnightNIGGER228',
+        'PORT': '5432',
     }
 }
 
